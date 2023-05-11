@@ -9,7 +9,8 @@ import Horario from './pages/horario';
 // import Material from './material';
 import Login from './components/login';
 import Signup from './components/signup';
-// import PersonalArea from './pages/personalarea';
+import PersonalArea from './pages/personalarea';
+import Test from './pages/test'
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
       <Routes>
         <Route path='/home' element={<Home />} />
         <Route path='/horario' element={<Horario />} />
+        <Route path='/test' element={<Test />} />
         {/*<Route path='/material' element={<Material />} /> */}
-        {/* <Route path='/personalarea' element={<PersonalArea></PersonalArea>}></Route> */}
+        <Route path='/personalarea' element={<PersonalArea></PersonalArea>}></Route>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
       </Routes>

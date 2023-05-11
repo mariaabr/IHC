@@ -128,6 +128,8 @@ const Horario = () => {
     }
 
     const [showText, setShowText] = useState(false);
+    const [showText2, setShowText2] = useState(false);
+    const [showText3, setShowText3] = useState(false);
     const [infoaula, setInfoAula] = useState(false);
     const [pageNumber, setPageNumber] = useState(23);
     const [pageNumberTotal, setPageNumberTotal] = useState(570);
@@ -143,6 +145,16 @@ const Horario = () => {
         setPageNumber(newPageNumber);
         setShowText(false);
     }
+
+    const handleButtonClick2 = () => {
+        setShowText2(true);
+    }
+
+    const handleButtonClick3 = () => {
+        setShowText3(true);
+    }
+
+
 
     const handleInfoAula = (event) => {
         event.preventDefault();
@@ -331,8 +343,8 @@ const Horario = () => {
 
                         {/* Popup/modal window */}
                         {showText && (
-                            <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-                                <div className="text-left absolute z-10 bg-gray-100 rounded-md p-4 flex flex-col items-start ">
+                            <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-md pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
                                     <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
                                         Tem certeza que pretende 
                                     </h4>
@@ -372,18 +384,26 @@ const Horario = () => {
                                                     className="border border-gray-400 p-2 mr-2" placeholder={pageNumber}
                                                 /> */}
                                                 <button
-                                                    class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 bg-[#AFD3E2] hover:bg-[#19A7CE]  rounded mt-4  py-1 px-2 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                                    class="absolute top-3 right-7 text-gray-500 hover:text-gray-800 bg-[#AFD3E2] hover:bg-[#19A7CE]  rounded mt-4  py-1 px-2 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none"
                                                     onClick={() => setShowText(false)}
                                                 >
-                                                    <span class="text-gray-600" >×</span>
+                                                    ×
                                                 </button>
 
 
                                                 <button
                                                     type="submit"
-                                                    className="relative top-60 bg-[#146C94] hover:bg-[#19A7CE] text-base text-white py-4 px-6 rounded mt-4 "
+                                                    className="relative bg-[#146C94] hover:bg-[#19A7CE] text-white py-4 px-14 rounded-xl mt-5 " onClick={() => setShowText(false)}
                                                 >
-                                                    Submit
+                                                    <span className='text-xl font-bold'> Não</span>
+                                                   
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="relative bg-[#146C94] hover:bg-[#AFD3E2] text-white py-4 px-14 rounded-xl mt-5 ml-20" onClick={handleButtonClick2}
+                                                >
+                                                    <span className='text-xl font-bold' onClick={() => setShowText(false)}> Sim </span>
+                                                   
                                                 </button>
                                             </form>
                                         </div>
@@ -393,6 +413,122 @@ const Horario = () => {
                                 <div className="absolute z-0 bg-black opacity-50 w-full h-full"></div>
                             </div>
                         )}
+
+                        {/* Popup/modal window */}
+                        {showText2 && (
+                            <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-md pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
+                                    <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
+                                        Tem certeza que pretende 
+                                    </h4>
+                                    <h4 className="text-3xl font-bold mb-4 ml-20">
+                                        marcar esta aula?
+                                    </h4>
+                                    <div className="flex items-center ml-5">
+                                        <div className="ml-4">
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Horas: 09:00 - 11:00
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Professor: Abel Teixeira
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Lotação: 6/7
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Preço: 20 euros
+                                            </h5>
+
+                                            {/*Não apagar importante para o filtrar */}
+                                            {/* <select
+                                                className="border border-gray-400 p-2 mb-4"
+                                                //value={typeOfReading}
+                                                onChange={handleTypeOfReading}
+                                            >
+                                                <option value="Currently Reading">Currently Reading </option>
+                                                <option value="Finished Reading">Finished Reading</option>
+                                            </select> */}
+
+                                            <form onSubmit={handleModalSubmit}>
+                                                {/* <h4 className="mt-6 text-xl font-semibold ">Current page:</h4>
+                                                <input
+                                                    type="number"
+                                                    name="pageNumber"
+                                                    className="border border-gray-400 p-2 mr-2" placeholder={pageNumber}
+                                                /> */}
+                                                <button
+                                                    class="absolute top-3 right-7 text-gray-500 hover:text-gray-800 bg-[#AFD3E2] hover:bg-[#19A7CE]  rounded mt-4  py-1 px-2 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                                    onClick={() => setShowText2(false)}
+                                                >
+                                                    ×
+                                                </button>
+
+
+                                                <button
+                                                    type="submit"
+                                                    className="relative bg-[#146C94] hover:bg-[#19A7CE] text-white py-4 px-14 rounded-xl mt-5 " onClick={() => setShowText2(false)}
+                                                >
+                                                    <span className='text-xl font-bold'> Não</span>
+                                                   
+                                                </button>
+                                                <button
+                                                    type="submit"
+                                                    className="relative bg-[#146C94] hover:bg-[#AFD3E2] text-white py-4 px-14 rounded-xl mt-5 ml-20" onClick={handleButtonClick3}
+                                                >
+                                                    <span className='text-xl font-bold' onClick={() => setShowText2(false)}> Sim </span>
+                                                   
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="absolute z-0 bg-black opacity-50 w-full h-full"></div>
+                            </div>
+                        )}
+
+                        {/* Popup/modal window */}
+                        {showText3 && (
+                            <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-md pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
+                                    <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
+                                        Aula marcada com sucesso!!
+                                    </h4>
+                                    <div className="flex items-center ml-5">
+                                        <div className="ml-4">
+
+                                            {/*Não apagar importante para o filtrar */}
+                                            {/* <select
+                                                className="border border-gray-400 p-2 mb-4"
+                                                //value={typeOfReading}
+                                                onChange={handleTypeOfReading}
+                                            >
+                                                <option value="Currently Reading">Currently Reading </option>
+                                                <option value="Finished Reading">Finished Reading</option>
+                                            </select> */}
+
+                                            <form onSubmit={handleModalSubmit}>
+                                                {/* <h4 className="mt-6 text-xl font-semibold ">Current page:</h4>
+                                                <input
+                                                    type="number"
+                                                    name="pageNumber"
+                                                    className="border border-gray-400 p-2 mr-2" placeholder={pageNumber}
+                                                /> */}
+                                                <button
+                                                    class="absolute top-3 right-7 text-gray-500 hover:text-gray-800 bg-[#AFD3E2] hover:bg-[#19A7CE]  rounded mt-4  py-1 px-2 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                                    onClick={() => setShowText3(false)}
+                                                >
+                                                    ×
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="absolute z-0 bg-black opacity-50 w-full h-full"></div>
+                            </div>
+                        )}
+
                     </div>
                     <footer class="mt-40 w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
                         <div class="text-center">
