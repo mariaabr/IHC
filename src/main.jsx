@@ -1,16 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter, Router, Routes, Route } from 'react-router-dom';
 import App from './App.jsx'
-import HorarioSurf from './HorarioSurf.jsx'
-import PersonalArea from './PersonalArea.jsx'
 import './index.css'
-import Example from './Test.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/*<App />*/}
-    <Example />
-    {/*<HorarioSurf />*/}
-    {/*<PersonalArea />*/}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>,
 )
