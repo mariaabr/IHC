@@ -1,0 +1,7 @@
+.background-surf {
+    background-image: url('./backgroundsurf.png');
+    background-repeat: repeat;
+    background-size: cover;
+    opacity: 0.8;
+  }
+  
