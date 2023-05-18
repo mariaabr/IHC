@@ -45,14 +45,14 @@ function Login() {
                                             </div>
                                         </div>
 
-                                        <div className="flex items-center">
+                                        {/* <div className="flex items-center">
                                             <div className="flex">
                                                 <input id="remember-me" name="remember-me" type="checkbox" className="shrink-0 mt-0.5 border-gray-200 rounded text-blue-600 pointer-events-none focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800" />
                                             </div>
                                             <div className="ml-3">
                                                 <label htmlFor="remember-me" className="text-sm text-[#787474] font-medium dark:text-white">Remember me</label>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <Link to="/personalarea2">
                                             <button type="submit" className="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-[#037971] text-white hover:bg-[#5BB6AE] focus:outline-none focus:ring-2 focus:ring-[#5BB6AE] focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">Log in</button>
                                         </Link>

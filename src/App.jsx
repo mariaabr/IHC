@@ -15,9 +15,14 @@ import Test from './pages/test'
 import OficialInscricao from './pages/oficialinscricao'
 
 function App() {
+  let user = null;
+  if (localStorage.getItem("user")) {
+    user = JSON.parse(localStorage.getItem("user"));
+  }
+
   return (
     <>
-      <Navbarcode></Navbarcode>
+      <Navbarcode user={user}></Navbarcode>
       {/* <Home></Home> */}
       {/* <Login></Login>
       <Signup></Signup> */}

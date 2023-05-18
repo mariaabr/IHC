@@ -4,22 +4,29 @@ import assets from '../assets/assets';
 import user from './velho.jpg'
 
 const PersonalArea2 = () => {
-  const [seguidores, setSeguidores] = useState(100);
-  const [seguindo, setSeguindo] = useState(50);
-  const [seguindoUsuario, setSeguindoUsuario] = useState(false);
+  // const [seguidores, setSeguidores] = useState(100);
+  // const [seguindo, setSeguindo] = useState(50);
+  // const [seguindoUsuario, setSeguindoUsuario] = useState(false);
 
-  const handleSeguir = () => {
-    if (!seguindoUsuario) {
-      setSeguidores(seguidores + 1);
-      setSeguindoUsuario(true);
-    } else {
-      setSeguidores(seguidores - 1);
-      setSeguindoUsuario(false);
-    }
-  };
+  // const handleSeguir = () => {
+  //   if (!seguindoUsuario) {
+  //     setSeguidores(seguidores + 1);
+  //     setSeguindoUsuario(true);
+  //   } else {
+  //     setSeguidores(seguidores - 1);
+  //     setSeguindoUsuario(false);
+  //   }
+  // };
 
+  const fname = JSON.parse(localStorage.getItem("user"))['fname'];
+  const lname = JSON.parse(localStorage.getItem("user"))['lname'];
+  const email = JSON.parse(localStorage.getItem("user"))['email'];
+  const phone = JSON.parse(localStorage.getItem("user"))['phone'];
 
-
+  function removeUserFromLocalStorage() {
+    localStorage.removeItem("user");
+    window.location.replace("http://localhost:5173/home");
+  }
 
   return (
 
@@ -27,7 +34,7 @@ const PersonalArea2 = () => {
 
       <div>
         <div className="max-w text-left">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Olá,Abel Costa!</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Olá, {fname} {lname}!</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Você não pode colocar um limite para nada. Quanto mais você sonha, mais longe você pode chegar.
           </p>
@@ -39,10 +46,10 @@ const PersonalArea2 = () => {
               <th>
                 <div className='ml-14 '>
                   <p className="text-3xl text-left ml-0 mt-0 " >Sobre mim:</p>
-                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Nome: Abel</p>
-                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Apelido: Costa</p>
-                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl"  >email:  abelcosta@gmail.com</p>
-                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Contacto: 977666333</p>
+                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Nome: {fname}</p>
+                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Apelido: {lname}</p>
+                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl"  >Email:  {email}</p>
+                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Contacto: {phone}</p>
                 </div>
               </th>
             </tr>
@@ -205,15 +212,10 @@ const PersonalArea2 = () => {
         </div>
       </div>
       <div className='flex justify-end mr-20 mt-2'>
-        <Link to="/home">
-          <button
-            type="button"
-            className="rounded-md bg-[#5BB6AE] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]"
-          // onClick={handleSeguir}
-          >
-            {/* {seguindoUsuario ? "Terminar Sessão" : "Disable"} */}
-            Terminar sessão
-          </button>
+      <Link to="/home">
+        <button type="button" onClick={removeUserFromLocalStorage} className="rounded-md bg-[#5BB6AE] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]">
+          Terminar sessão
+        </button>
         </Link>
       </div>
       <footer className="mt-20 w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">

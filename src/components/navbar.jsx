@@ -3,8 +3,11 @@ import { useState } from 'react'
 import logo from './logocatchaswell.png';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'flowbite-react';
+import boards from './boardsmore.jpg';
 
-function Navbarcode() {
+function Navbarcode({ user }) {
+    console.log(user && true);
+
     return (
         <>
             <header className="sm:justify-start sm:flex-nowrap z-50 w-full bg-white text-sm py-3 sm:py-0 dark:bg-gray-800 dark:border-gray-700">
@@ -57,7 +60,7 @@ function Navbarcode() {
                             <div className="flex">
                                 <Dropdown label="Aulas" class="font-medium text-[#EFEFEF] w-full hover:text-gray-500" dismissOnClick={false}>
                                     <Dropdown label="Surf" placement="right" class="font-medium text-gray-500 w-full hover:text-gray-500" dismissOnClick={false}>
-                                        <Link to="/...">
+                                        <Link to="/horario">
                                             <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 pr-4 hover:bg-gray-100">
                                                 Individual
                                             </Dropdown.Item>
@@ -98,23 +101,33 @@ function Navbarcode() {
                                 </Dropdown>
                             </div>
 
-                            {/* <Link to="/login"> */}
-                            <Link to="/login" className="flex items-center gap-x-2 font-medium text-[#EFEFEF] hover:text-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">
+                            {/* <Link to="/login" className="flex items-center gap-x-2 font-medium text-[#EFEFEF] hover:text-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">
                                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                                 </svg>
                                 Log in
-                            </Link>
-                            {/* </Link> */}
+                            </Link> */}
 
-                            {/* <Link to="/signup"> */}
-                            <Link to="/signup" className="flex items-center gap-x-2 font-medium text-[#EFEFEF] hover:text-gray-500 sm:border-l sm:border-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500" href="#">
+                            {!user && <Link to="/signup" className="flex items-center gap-x-2 font-medium text-[#EFEFEF] hover:text-gray-500 sm:border-l sm:border-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">
                                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                                 </svg>
                                 Sign up
-                            </Link>
-                            {/* </Link> */}
+                            </Link>}
+
+                            {user &&
+                                (
+                                    (user.cargo === "professor" || user.cargo === "Professor")
+                                        ? <Link to="/personalarea2" className="flex items-center gap-x-2 space-x-4 font-medium text-[#EFEFEF] hover:text-gray-500 sm:border-l sm:border-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">Hi {user["fname"]} {user["lname"]}! <img src={boards} alt='user' className="w-12 h-12 rounded-full flex items-center justify-center"></img></Link>
+                                        : <Link to="/personalarea" className="flex items-center gap-x-2 space-x-4 font-medium text-[#EFEFEF] hover:text-gray-500 sm:border-l sm:border-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">Hi {user["fname"]} {user["lname"]}! <img src={boards} alt='user' className="w-12 h-12 rounded-full flex items-center justify-center"></img></Link>
+                                    // (
+                                    //   (document.getElementById("cargo").value === "aluno") || (document.getElementById("cargo").value === "Aluno")
+                                    // )
+                                    // ? window.location.replace("http://localhost:5173/personalarea")
+                                    // : window.location.replace("http://localhost:5173/login")
+                                )
+                                // <Link to="/personalarea" className="flex items-center gap-x-2 space-x-4 font-medium text-[#EFEFEF] hover:text-gray-500 sm:border-l sm:border-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">Hi {user["fname"]} {user["lname"]}! <img src={boards} alt='user' className="w-12 h-12 rounded-full flex items-center justify-center"></img></Link>
+                            }
                         </div>
                     </div>
                 </nav>

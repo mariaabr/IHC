@@ -2,24 +2,32 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import assets from '../assets/assets';
 import user from '../components/user.png'
+import headboard from './headboard.png';
 
 const PersonalArea = () => {
-  const [seguidores, setSeguidores] = useState(100);
-  const [seguindo, setSeguindo] = useState(50);
-  const [seguindoUsuario, setSeguindoUsuario] = useState(false);
+  // const [seguidores, setSeguidores] = useState(100);
+  // const [seguindo, setSeguindo] = useState(50);
+  // const [seguindoUsuario, setSeguindoUsuario] = useState(false);
 
-  const handleSeguir = () => {
-    if (!seguindoUsuario) {
-      setSeguidores(seguidores + 1);
-      setSeguindoUsuario(true);
-    } else {
-      setSeguidores(seguidores - 1);
-      setSeguindoUsuario(false);
-    }
-  };
+  // const handleSeguir = () => {
+  //   if (!seguindoUsuario) {
+  //     setSeguidores(seguidores + 1);
+  //     setSeguindoUsuario(true);
+  //   } else {
+  //     setSeguidores(seguidores - 1);
+  //     setSeguindoUsuario(false);
+  //   }
+  // };
 
+  const fname = JSON.parse(localStorage.getItem("user"))['fname'];
+  const lname = JSON.parse(localStorage.getItem("user"))['lname'];
+  const email = JSON.parse(localStorage.getItem("user"))['email'];
+  const phone = JSON.parse(localStorage.getItem("user"))['phone'];
 
-
+  function removeUserFromLocalStorage() {
+    localStorage.removeItem("user");
+    window.location.replace("http://localhost:5173/home");
+  }
 
   return (
 
@@ -27,22 +35,22 @@ const PersonalArea = () => {
 
       <div>
         <div className="max-w text-left">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Olá, Rafael Oliveira!</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Olá, {fname} {lname}!</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Você não pode colocar um limite para nada. Quanto mais você sonha, mais longe você pode chegar.
           </p>
           <table className="p-1  mt-14">
             <tr>
               <th className="relative w-60 h-60 ml-6 mb-5 mr-10 overflow-hidden rounded-lg ">
-                <img className="absolute top-0 left-0 w-full h-full " src={user} alt="User" />
+                <img className="absolute top-0 left-0 w-full h-full " src={headboard} alt="User" />
               </th>
               <th>
                 <div className='ml-14 '>
                   <p className="text-3xl text-left ml-0 mt-0 " >Sobre mim:</p>
-                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Nome: Rafael</p>
-                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Apelido: Oliveira</p>
-                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl"  >email:  rafaeloliveira@gmail.com </p>
-                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Contacto: 977111333</p>
+                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Nome: {fname}</p>
+                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Apelido: {lname}</p>
+                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl"  >Email:  {email}</p>
+                  <p className="text-left mt-5 text-gray-800 text-left fonttext-xl" >Contacto: {phone}</p>
                 </div>
               </th>
             </tr>
@@ -218,7 +226,7 @@ const PersonalArea = () => {
       </div>
       <div className='flex justify-end mr-20 mt-2'>
         <Link to="/home">
-        <button type="button" className="rounded-md bg-[#5BB6AE] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]">
+        <button type="button" onClick={removeUserFromLocalStorage} className="rounded-md bg-[#5BB6AE] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]">
           Terminar sessão
         </button>
         </Link>
