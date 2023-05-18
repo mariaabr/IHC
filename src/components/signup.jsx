@@ -118,10 +118,12 @@ function Signup() {
                                         </div>
                                     </div>
                                     <div className="flex justify-end">
-                                        <button
-                                            type="submit"
-                                            className="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-[#037971] text-white hover:bg-[#5BB6AE] focus:outline-none focus:ring-2 focus:ring-[#5BB6AE] focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"> Sign Up
-                                        </button>
+                                        <Link to="/personalarea">
+                                            <button
+                                                type="submit"
+                                                className="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-[#037971] text-white hover:bg-[#5BB6AE] focus:outline-none focus:ring-2 focus:ring-[#5BB6AE] focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"> Sign Up
+                                            </button>
+                                        </Link>
                                     </div>
                                 </form>
                             </div>

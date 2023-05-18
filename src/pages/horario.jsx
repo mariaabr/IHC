@@ -419,25 +419,10 @@ const Horario = () => {
                             <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
                                 <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-md pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
                                     <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
-                                        Tem certeza que pretende 
-                                    </h4>
-                                    <h4 className="text-3xl font-bold mb-4 ml-20">
-                                        marcar esta aula?
+                                        Pretende Alugar material?
                                     </h4>
                                     <div className="flex items-center ml-5">
                                         <div className="ml-4">
-                                            <h5 className="text-xl mt-5 mb-2">
-                                                Horas: 09:00 - 11:00
-                                            </h5>
-                                            <h5 className="text-xl mt-5 mb-2">
-                                                Professor: Abel Teixeira
-                                            </h5>
-                                            <h5 className="text-xl mt-5 mb-2">
-                                                Lotação: 6/7
-                                            </h5>
-                                            <h5 className="text-xl mt-5 mb-2">
-                                                Preço: 20 euros
-                                            </h5>
 
                                             {/*Não apagar importante para o filtrar */}
                                             {/* <select
@@ -466,9 +451,9 @@ const Horario = () => {
 
                                                 <button
                                                     type="submit"
-                                                    className="relative bg-[#146C94] hover:bg-[#19A7CE] text-white py-4 px-14 rounded-xl mt-5 " onClick={() => setShowText2(false)}
+                                                    className="relative bg-[#146C94] hover:bg-[#19A7CE] text-white py-4 px-14 rounded-xl mt-5 " onClick={handleButtonClick3}
                                                 >
-                                                    <span className='text-xl font-bold'> Não</span>
+                                                    <span className='text-xl font-bold' onClick={() => setShowText2(false)}> Não </span>
                                                    
                                                 </button>
                                                 <button
