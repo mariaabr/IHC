@@ -131,10 +131,8 @@ const Horario = () => {
     const [showText2, setShowText2] = useState(false);
     const [showText3, setShowText3] = useState(false);
     const [infoaula, setInfoAula] = useState(false);
-    const [pageNumber, setPageNumber] = useState(23);
-    const [pageNumberTotal, setPageNumberTotal] = useState(570);
-    const [typeOfReading, setTypeOfReading] = useState("Currently Reading");
 
+    
     const handleButtonClick = () => {
         setShowText(true);
     }
@@ -147,10 +145,12 @@ const Horario = () => {
     }
 
     const handleButtonClick2 = () => {
+        setShowText(false);
         setShowText2(true);
     }
 
     const handleButtonClick3 = () => {
+        setShowText2(false);
         setShowText3(true);
     }
 
@@ -189,7 +189,7 @@ const Horario = () => {
                         <div style={titleStyle}>
 
                             <div style={{ height: '10px', textAlign: 'left', marginBottom: '' }}>
-                                <Link to="/home" className="text-black"> Voltar </Link>
+                                <Link to="/home" className="text-black"> &lt; Voltar </Link>
                                 {/* <Link to={'/home'}><button style={{ color: 'black', backgroundColor: 'white', padding: '0px', border: 'none' }}>
                                     {/* <Link to>
                                             <svg class="h-8 w-8 text-red-500" width="24" height="20" viewBox="0 0 24 15" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -295,7 +295,7 @@ const Horario = () => {
                                     <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Preço: <a style={{ fontSize: '28px' }}> 20 euros </a> </h4>
                                 </div>
 
-                                <div style={{ textAlign: 'center', marginTop: '100px', marginRight: '160px' }}>
+                                <div style={{ textAlign: 'center', marginTop: '70px', marginRight: '160px' }}>
                                     <button style={filtro2} className="bg-[#D8D0C7] hover:bg-[#A3927F]" onClick={handleButtonClick}>
                                         <h3>Marcar aula</h3>
                                     </button>
@@ -330,7 +330,7 @@ const Horario = () => {
                                     <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Preço:  </h4>
                                 </div>
 
-                                <div style={{ textAlign: 'center', marginTop: '100px', marginRight: '160px' }}>
+                                <div style={{ textAlign: 'center', marginTop: '70px', marginRight: '160px' }}>
                                     <button style={filtro2} className="bg-[#D8D0C7] hover:bg-[#A3927F]" onClick={handleButtonClick}>
                                         <h3>Marcar aula</h3>
                                     </button>
@@ -344,9 +344,9 @@ const Horario = () => {
                         {/* Popup/modal window */}
                         {showText && (
                             <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-md pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
+                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-16 flex flex-col items-start ">
                                     <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
-                                        Tem certeza que pretende 
+                                        Tem certeza que pretende
                                     </h4>
                                     <h4 className="text-3xl font-bold mb-4 ml-20">
                                         marcar esta aula?
@@ -384,7 +384,7 @@ const Horario = () => {
                                                     className="border border-gray-400 p-2 mr-2" placeholder={pageNumber}
                                                 /> */}
                                                 <button
-                                                    class="absolute top-3 right-7 text-gray-500 hover:text-gray-800 bg-[#AFD3E2] hover:bg-[#19A7CE]  rounded mt-4  py-1 px-2 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                                    class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
                                                     onClick={() => setShowText(false)}
                                                 >
                                                     ×
@@ -392,18 +392,14 @@ const Horario = () => {
 
 
                                                 <button
-                                                    type="submit"
-                                                    className="relative bg-[#146C94] hover:bg-[#19A7CE] text-white py-4 px-14 rounded-xl mt-5 " onClick={() => setShowText(false)}
-                                                >
-                                                    <span className='text-xl font-bold'> Não</span>
-                                                   
+                                                    type="button"
+                                                    className="rounded-md bg-[#95A6A4] px-14 py-3 mt-6 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={()=> setShowText(false)}
+                                                >Não
                                                 </button>
                                                 <button
-                                                    type="submit"
-                                                    className="relative bg-[#146C94] hover:bg-[#AFD3E2] text-white py-4 px-14 rounded-xl mt-5 ml-20" onClick={handleButtonClick2}
-                                                >
-                                                    <span className='text-xl font-bold' onClick={() => setShowText(false)}> Sim </span>
-                                                   
+                                                    type="button"
+                                                    className="rounded-md bg-[#5BB6AE] px-14 py-3 ml-14 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={handleButtonClick2}
+                                                >Sim
                                                 </button>
                                             </form>
                                         </div>
@@ -417,52 +413,51 @@ const Horario = () => {
                         {/* Popup/modal window */}
                         {showText2 && (
                             <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-md pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
-                                    <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
-                                        Pretende Alugar material?
+                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-14 pl-10 pr-20 pb-14 flex flex-col items-start ">
+                                <h4 className="text-center text-3xl font-bold mb-6 ml-6" >
+                                        Pretende alugar material?
                                     </h4>
                                     <div className="flex items-center ml-5">
                                         <div className="ml-4">
 
-                                            {/*Não apagar importante para o filtrar */}
-                                            {/* <select
-                                                className="border border-gray-400 p-2 mb-4"
-                                                //value={typeOfReading}
-                                                onChange={handleTypeOfReading}
-                                            >
-                                                <option value="Currently Reading">Currently Reading </option>
-                                                <option value="Finished Reading">Finished Reading</option>
-                                            </select> */}
-
                                             <form onSubmit={handleModalSubmit}>
-                                                {/* <h4 className="mt-6 text-xl font-semibold ">Current page:</h4>
-                                                <input
-                                                    type="number"
-                                                    name="pageNumber"
-                                                    className="border border-gray-400 p-2 mr-2" placeholder={pageNumber}
-                                                /> */}
-                                                <button
-                                                    class="absolute top-3 right-7 text-gray-500 hover:text-gray-800 bg-[#AFD3E2] hover:bg-[#19A7CE]  rounded mt-4  py-1 px-2 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                            <button
+                                                    class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
                                                     onClick={() => setShowText2(false)}
                                                 >
                                                     ×
                                                 </button>
 
 
-                                                <button
+                                                {/* <button
                                                     type="submit"
                                                     className="relative bg-[#146C94] hover:bg-[#19A7CE] text-white py-4 px-14 rounded-xl mt-5 " onClick={handleButtonClick3}
                                                 >
                                                     <span className='text-xl font-bold' onClick={() => setShowText2(false)}> Não </span>
-                                                   
+
                                                 </button>
                                                 <button
                                                     type="submit"
                                                     className="relative bg-[#146C94] hover:bg-[#AFD3E2] text-white py-4 px-14 rounded-xl mt-5 ml-20" onClick={handleButtonClick3}
                                                 >
                                                     <span className='text-xl font-bold' onClick={() => setShowText2(false)}> Sim </span>
-                                                   
+
+                                                </button> */}
+
+                                                <button
+                                                    type="button"
+                                                    className="rounded-md bg-[#95A6A4] px-14 py-3 mt-3 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={handleButtonClick3}
+                                                >Não
                                                 </button>
+                                                {/**acrescentar página da matilde */}
+                                                <Link to="/...">
+                                                <button
+                                                    type="button"
+                                                    className="rounded-md bg-[#5BB6AE] px-14 py-3 ml-14 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={handleButtonClick3}
+                                                >Sim
+                                                </button>
+                                                </Link>
+                                                
                                             </form>
                                         </div>
                                     </div>
@@ -475,7 +470,7 @@ const Horario = () => {
                         {/* Popup/modal window */}
                         {showText3 && (
                             <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-md pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
+                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
                                     <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
                                         Aula marcada com sucesso!!
                                     </h4>
@@ -500,7 +495,7 @@ const Horario = () => {
                                                     className="border border-gray-400 p-2 mr-2" placeholder={pageNumber}
                                                 /> */}
                                                 <button
-                                                    class="absolute top-3 right-7 text-gray-500 hover:text-gray-800 bg-[#AFD3E2] hover:bg-[#19A7CE]  rounded mt-4  py-1 px-2 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                                    class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
                                                     onClick={() => setShowText3(false)}
                                                 >
                                                     ×

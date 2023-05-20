@@ -1,7 +1,25 @@
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 
 export default function OficialInscricao() {
+
+  const [showText, setShowText] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowText(true);
+  }
+
+
+  const handleModalSubmit = (event) => {
+    event.preventDefault();
+    setShowText(false);
+  }
+
+  
+
+
+
   return (
     <>
       <div className="mx-24 mt-16">
@@ -326,15 +344,71 @@ export default function OficialInscricao() {
                 Cancelar
               </button>
             </Link>
-            <Link to="/home">
-              <button
-                type="submit"
-                className="rounded-md bg-[#5BB6AE] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5BB6AE]-600">
-                Guardar
-              </button>
-            </Link>
+            {/* <Link to="/home"> */}
+            <button
+              type="button"
+              className="rounded-md bg-[#5BB6AE] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5BB6AE]-600" onClick={handleButtonClick}>
+              Guardar
+            </button>
+
+            {/* </Link> */}
+
           </div>
+          {showText && (
+          <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+            <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
+              <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
+                A sua inscrição foi registada
+              </h4>
+              <div className="flex items-center ml-5">
+                <div className="ml-4">
+
+
+                  <form onSubmit={handleModalSubmit}>
+                    <Link to="/personalarea">
+                      <button
+                        class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none"
+                      >
+                        ×
+                      </button>
+                    </Link>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute z-0 bg-black opacity-50 w-full h-full"></div>
+          </div>
+        )}
         </form >
+        {/* Popup/modal window */}
+        {/* {showText && (
+          <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+            <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
+              <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
+                A sua inscrição foi registada
+              </h4>
+              <div className="flex items-center ml-5">
+                <div className="ml-4">
+
+
+                  <form onSubmit={handleModalSubmit}>
+                    <Link to="/home">
+                      <button
+                        class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none"
+                      >
+                        ×
+                      </button>
+                    </Link>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute z-0 bg-black opacity-50 w-full h-full"></div>
+          </div>
+        )} */}
+
       </div>
       <footer className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="text-center">

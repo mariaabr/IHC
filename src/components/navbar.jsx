@@ -58,8 +58,8 @@ function Navbarcode({ user }) {
                     <div id="navbar-collapse-with-animation" className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
                         <div className="flex flex-col gap-y-4 gap-x-0 mt-7 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
                             <div className="flex">
-                                <Dropdown label="Aulas" class="font-medium text-[#EFEFEF] w-full hover:text-gray-500" dismissOnClick={false}>
-                                    <Dropdown label="Surf" placement="right" class="font-medium text-gray-500 w-full hover:text-gray-500" dismissOnClick={false}>
+                                <Dropdown label="Aulas" class="font-medium text-[#EFEFEF] w-full hover:text-gray-500">
+                                    <Dropdown label="Surf" placement="right" class="font-medium text-gray-500 w-full hover:text-gray-500" >
                                         <Link to="/horario">
                                             <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 pr-4 hover:bg-gray-100">
                                                 Individual
@@ -71,7 +71,7 @@ function Navbarcode({ user }) {
                                             </Dropdown.Item>
                                         </Link>
                                     </Dropdown>
-                                    <Dropdown label="Bodyboard" placement="right" class="font-medium text-gray-500 w-full hover:text-gray-500" dismissOnClick={false}>
+                                    <Dropdown label="Bodyboard" placement="right" class="font-medium text-gray-500 w-full hover:text-gray-500" >
                                         <Link to="/...">
                                             <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 pr-4 hover:bg-gray-100">
                                                 Individual
@@ -87,7 +87,7 @@ function Navbarcode({ user }) {
                             </div>
 
                             <div className="flex">
-                                <Dropdown label="Material" class="font-medium text-[#EFEFEF] w-full hover:text-gray-500" dismissOnClick={false}>
+                                <Dropdown label="Material" class="font-medium text-[#EFEFEF] w-full hover:text-gray-500">
                                     <Link to="/...">
                                         <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 hover:bg-gray-100">
                                             Surf
