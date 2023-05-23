@@ -4,6 +4,7 @@ import logo from './logocatchaswell.png';
 import { Link } from 'react-router-dom';
 import { Dropdown } from 'flowbite-react';
 import boards from './boardsmore.jpg';
+import velho from './velho.jpg';
 
 function Navbarcode({ user }) {
     console.log(user && true);
@@ -118,7 +119,7 @@ function Navbarcode({ user }) {
                             {user &&
                                 (
                                     (user.cargo === "professor" || user.cargo === "Professor")
-                                        ? <Link to="/personalarea2" className="flex items-center gap-x-2 space-x-4 font-medium text-[#EFEFEF] hover:text-gray-500 sm:border-l sm:border-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">Hi {user["fname"]} {user["lname"]}! <img src={boards} alt='user' className="w-12 h-12 rounded-full flex items-center justify-center"></img></Link>
+                                        ? <Link to="/personalarea2" className="flex items-center gap-x-2 space-x-4 font-medium text-[#EFEFEF] hover:text-gray-500 sm:border-l sm:border-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">Hi {user["fname"]} {user["lname"]}! <img src={velho} alt='user' className="w-12 h-12 rounded-full flex items-center justify-center"></img></Link>
                                         : <Link to="/personalarea" className="flex items-center gap-x-2 space-x-4 font-medium text-[#EFEFEF] hover:text-gray-500 sm:border-l sm:border-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">Hi {user["fname"]} {user["lname"]}! <img src={boards} alt='user' className="w-12 h-12 rounded-full flex items-center justify-center"></img></Link>
                                     // (
                                     //   (document.getElementById("cargo").value === "aluno") || (document.getElementById("cargo").value === "Aluno")
