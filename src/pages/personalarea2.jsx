@@ -76,7 +76,7 @@ const PersonalArea2 = () => {
           </div>
           <div>
             <div className="mt-7">
-              <div className="flex flex-wrap -mx-2 ">
+              <div className="flex flex-wrap -mx-2 mr-28">
                 <div className="w-full md:w-1/4 px-2 mb-8 ">
                   <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                     <div className="block rounded-lg bg-[#5BB6AE] shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 ">
@@ -211,7 +211,7 @@ const PersonalArea2 = () => {
 
         </div>
       </div>
-      <div className='flex justify-end mr-20 mt-2'>
+      <div className='flex justify-end mr-32 mt-2'>
       <Link to="/home">
         <button type="button" onClick={removeUserFromLocalStorage} className="rounded-md bg-[#5BB6AE] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]">
           Terminar sessão

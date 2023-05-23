@@ -101,7 +101,7 @@ const PersonalArea = () => {
                         <p className=" mt-5 text-gray-800  fonttext-xl"  >Dia: Segunda</p>
                         <p className=" mt-5 text-gray-800  fonttext-xl" >Professor: Abel</p>
                         <p className=" mt-5 text-gray-800  fonttext-xl"  >Horas: 09:00 - 11:00</p>
-                        <p className=" mt-5 text-gray-800  fonttext-xl mb-14" >Contacto: 977111333</p>
+                        <p className=" mt-5 text-gray-800  fonttext-xl mb-14" >Contacto: 977222444</p>
                       </div>
 
                       <div className="p-2">
@@ -202,7 +202,7 @@ const PersonalArea = () => {
                         <p className=" mt-5 text-gray-800  fonttext-xl"  >Dia: Segunda</p>
                         <p className=" mt-5 text-gray-800  fonttext-xl" >Professor: Stephanie</p>
                         <p className=" mt-5 text-gray-800  fonttext-xl"  >Horas: 11:00 - 13:00</p>
-                        <p className=" mt-5 text-gray-800  fonttext-xl mb-14" >Contacto: 977111333</p>
+                        <p className=" mt-5 text-gray-800  fonttext-xl mb-14" >Contacto: 978567890</p>
                       </div>
 
                       <div className="p-2">

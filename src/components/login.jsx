@@ -1,9 +1,55 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useState } from 'react'
+import { useEffect } from 'react';
 import './login.css'
 
 function Login() {
+
+    const [user, setUser] = useState({
+        email: "",
+        password: "",
+        fname: "",
+        lname: "",
+        phone: "",
+        cargo: "Professor",
+      });
+      
+      const handleClick = (e) => {
+        e.preventDefault();
+        // const genderSelectElement = document.getElementById("genderSelect");
+        // const selectedOption = genderSelectElement.options[genderSelectElement.selectedIndex];
+        // const selectedValue = JSON.parse(selectedOption.getAttribute("data-value"));
+        // Update the user state with the new information entered in the form
+        setUser({
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+            fname: "Renato",
+            lname: "Gonçalves",
+            phone: "977111333",
+            cargo: "Professor"
+            // gender: selectedValue.gender,
+        });
+      
+        // Log the updated user object to the console
+        localStorage.setItem("user", JSON.stringify(user));
+        window.location.replace("http://localhost:5173/personalarea2");
+        // if((document.getElementById("cargo").value == "professor") || (document.getElementById("cargo").value == "Professor")){
+        //     window.location.replace("http://localhost:5173/personalarea2");
+        // } else if((document.getElementById("cargo").value == "aluno") || (document.getElementById("cargo").value == "Aluno")){
+        //     window.location.replace("http://localhost:5173/personalarea");
+        // } else {
+        //     window.location.replace("http://localhost:5173/home");
+        // }
+      };
+
+      useEffect(() => {
+        // Log the updated user object to the console whenever the state changes
+        localStorage.setItem("user", JSON.stringify(user));
+        const userFromStorage = JSON.parse(localStorage.getItem("user"));
+        console.log(userFromStorage);
+      }, [user]);
+
     return (
         <>
             <html className="h-screen background-surf">
@@ -53,9 +99,9 @@ function Login() {
                                                 <label htmlFor="remember-me" className="text-sm text-[#787474] font-medium dark:text-white">Remember me</label>
                                             </div>
                                         </div> */}
-                                        <Link to="/personalarea2">
-                                            <button type="submit" className="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-[#037971] text-white hover:bg-[#5BB6AE] focus:outline-none focus:ring-2 focus:ring-[#5BB6AE] focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">Log in</button>
-                                        </Link>
+                                        {/* <Link to="/personalarea2"> */}
+                                            <button type="submit" className="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-[#037971] text-white hover:bg-[#5BB6AE] focus:outline-none focus:ring-2 focus:ring-[#5BB6AE] focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" onClick={handleClick}>Log in</button>
+                                        {/* </Link> */}
                                     </div>
                                 </form>
                             </div>
