@@ -131,6 +131,7 @@ const Horario = () => {
     const [showText2, setShowText2] = useState(false);
     const [showText3, setShowText3] = useState(false);
     const [infoaula, setInfoAula] = useState(false);
+    const [cor, setCor] = useState(false);
 
     
     const handleButtonClick = () => {
@@ -152,6 +153,10 @@ const Horario = () => {
     const handleButtonClick3 = () => {
         setShowText2(false);
         setShowText3(true);
+    }
+
+    const handleButtonCor = () => {
+        setCor(true);
     }
 
 
@@ -221,7 +226,10 @@ const Horario = () => {
                             </div>
                             <div style={flexContainerStyle4}>
                                 {/* colocar a cena do if e muda a informação que está ao lado tipo mais 1 do gabriel*/}
-                                <div style={flexChildStyleAulaEscolhida} className="bg-[#5BB6AE] hover:bg-[#037971] " onClick={handleInfoAula}><button><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px', marginLeft: '14px' }}>09:00-11:00</p></button></div>
+                                {!cor ? (<div style={flexChildStyleAulaEscolhida} className="bg-[#5BB6AE] hover:bg-[#037971] " onClick={handleButtonCor}><button onClick={handleInfoAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px', marginLeft: '14px' }}>09:00-11:00</p></button></div>)
+                                :
+                                <div style={flexChildStyleAulaEscolhida} className="bg-[#037971] "><button><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px', marginLeft: '14px' }}>09:00-11:00</p></button></div>}
+                                
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>09:00-11:00</p></div>
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>09:00-11:00</p></div>
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>09:00-11:00</p></div>
@@ -385,7 +393,7 @@ const Horario = () => {
                                                 /> */}
                                                 <button
                                                     class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
-                                                    onClick={() => setShowText(false)}
+                                                    onClick={() => {setShowText(false), setCor(false), setInfoAula(false)}}
                                                 >
                                                     ×
                                                 </button>
@@ -393,7 +401,7 @@ const Horario = () => {
 
                                                 <button
                                                     type="button"
-                                                    className="rounded-md bg-[#95A6A4] px-14 py-3 mt-6 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={()=> setShowText(false)}
+                                                    className="rounded-md bg-[#95A6A4] px-14 py-3 mt-6 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={()=> {setShowText(false), setCor(false), setInfoAula(false)}}
                                                 >Não
                                                 </button>
                                                 <button
@@ -496,7 +504,7 @@ const Horario = () => {
                                                 /> */}
                                                 <button
                                                     class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
-                                                    onClick={() => setShowText3(false)}
+                                                    onClick={() => {setShowText3(false), setCor(false), setInfoAula(false)}}
                                                 >
                                                     ×
                                                 </button>
