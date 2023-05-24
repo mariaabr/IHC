@@ -458,7 +458,7 @@ const Horario = () => {
                                                 >Não
                                                 </button>
                                                 {/**acrescentar página da matilde */}
-                                                <Link to="/...">
+                                                <Link to="/tamanhosurf">
                                                 <button
                                                     type="button"
                                                     className="rounded-md bg-[#5BB6AE] px-14 py-3 ml-14 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={handleButtonClick3}
@@ -479,9 +479,12 @@ const Horario = () => {
                         {showText3 && (
                             <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
                                 <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
-                                    <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
-                                        Aula marcada com sucesso!!
-                                    </h4>
+                                <h4 className="text-center text-3xl mb-4 ml-6">
+                  Aluguer efetuado com sucesso.
+                </h4>
+                <h4 className="flex font-bold text-3xl text-[#5BB6AE]"style={{  display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto' }}>
+                  Aula marcada!
+                </h4>
                                     <div className="flex items-center ml-5">
                                         <div className="ml-4">
 
