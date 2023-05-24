@@ -58,6 +58,15 @@ function Navbarcode({ user }) {
 
                     <div id="navbar-collapse-with-animation" className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
                         <div className="flex flex-col gap-y-4 gap-x-0 mt-7 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:pl-7">
+
+                            <Link to="/test" className="flex items-center px-2 font-medium text-[#EFEFEF] hover:text-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">
+                                Metereologia
+                            </Link>
+
+                            <Link to="/test" className="flex items-center px-5 font-medium text-[#EFEFEF] hover:text-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">
+                                Preçário
+                            </Link>
+
                             <div className="flex">
                                 <Dropdown label="Aulas" class="font-medium text-[#EFEFEF] w-full hover:text-gray-500">
                                     <Dropdown label="Surf" placement="right" class="font-medium text-gray-500 w-full hover:text-gray-500" >
@@ -66,19 +75,19 @@ function Navbarcode({ user }) {
                                                 Individual
                                             </Dropdown.Item>
                                         </Link>
-                                        <Link to="/...">
+                                        <Link to="/test">
                                             <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 pr-4 hover:bg-gray-100">
                                                 Grupo
                                             </Dropdown.Item>
                                         </Link>
                                     </Dropdown>
                                     <Dropdown label="Bodyboard" placement="right" class="font-medium text-gray-500 w-full hover:text-gray-500" >
-                                        <Link to="/...">
+                                        <Link to="/test">
                                             <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 pr-4 hover:bg-gray-100">
                                                 Individual
                                             </Dropdown.Item>
                                         </Link>
-                                        <Link to="/...">
+                                        <Link to="/test">
                                             <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 pr-4 hover:bg-gray-100">
                                                 Grupo
                                             </Dropdown.Item>
@@ -87,33 +96,37 @@ function Navbarcode({ user }) {
                                 </Dropdown>
                             </div>
 
-                            <div className="flex">
+                            <Link to="/material" className="flex items-center px-5 font-medium text-[#EFEFEF] hover:text-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">
+                                Material
+                            </Link>
+
+                            {/* <div className="flex">
                                 <Dropdown label="Material" class="font-medium text-[#EFEFEF] w-full hover:text-gray-500">
-                                    <Link to="/...">
+                                    <Link to="/material">
                                         <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 hover:bg-gray-100">
                                             Surf
                                         </Dropdown.Item>
                                     </Link>
-                                    <Link to="/...">
+                                    <Link to="/test">
                                         <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 pr-4 hover:bg-gray-100">
                                             Bodyboard
                                         </Dropdown.Item>
                                     </Link>
                                 </Dropdown>
-                            </div>
+                            </div> */}
 
                             {!user && <Link to="/login" className="flex items-center gap-x-2 font-medium text-[#EFEFEF] hover:text-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">
                                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                                 </svg>
-                                Log in
+                                Entrar
                             </Link>}
 
                             {!user && <Link to="/signup" className="flex items-center gap-x-2 font-medium text-[#EFEFEF] hover:text-gray-500 sm:border-l sm:border-gray-500 sm:my-6 sm:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-gray-500">
                                 <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                                 </svg>
-                                Sign up
+                                Inscrever
                             </Link>}
 
                             {user &&

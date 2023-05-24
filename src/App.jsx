@@ -13,6 +13,9 @@ import PersonalArea from './pages/personalarea';
 import PersonalArea2 from './pages/personalarea2';
 import Test from './pages/test'
 import OficialInscricao from './pages/oficialinscricao'
+import Material from './pages/Material'
+import TamanhoCal from './pages/TamanhosComCalendario'
+import TamanhoSurf from './pages/TamanhoSurf'
 
 function App() {
   let user = null;
@@ -30,12 +33,15 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/horario' element={<Horario />} />
         <Route path='/test' element={<Test />} />
-        {/*<Route path='/material' element={<Material />} /> */}
+        <Route path='/material' element={<Material />} />
         <Route path='/personalarea' element={<PersonalArea />} />
         <Route path='/personalarea2' element={<PersonalArea2 />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/inscricao' element={<OficialInscricao />} />
+
+        <Route path='/tamanhocal' element={<TamanhoCal />} />
+        <Route path='/tamanhosurf' element={<TamanhoSurf />} />
       </Routes>
       {/* <Footer></Footer> */}
     </>

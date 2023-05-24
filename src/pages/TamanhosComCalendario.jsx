@@ -143,7 +143,7 @@ const Tamanho = () => {
                     fontSize: "50px",
                   }}
                 >
-                  <b>Aluguer Material Surf</b>
+                  <b>Aluguer de Material</b>
                 </p>
               </div>
             </div>

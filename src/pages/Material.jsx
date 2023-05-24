@@ -23,7 +23,7 @@ const Material = () => {
           <div style={{ display: 'flex', gridTemplateColumns: '1fr', gridTemplateRows: '1fr 1fr', height: '21vh', width: '80vw', gap: '0.5rem', marginTop: '0px', marginLeft: '0vw' }}>
             <div style={{ height: '10px', textAlign: 'left', marginBottom: '' }}>
               <p style={{ textAlign: 'center', marginTop: '120px', fontSize: '50px' }}>
-                <b>Aluguer Material</b>
+                <b>Aluguer de Material</b>
               </p>
             </div>
           </div>

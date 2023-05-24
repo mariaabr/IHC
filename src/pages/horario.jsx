@@ -480,7 +480,7 @@ const Horario = () => {
                             <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
                                 <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
                                 <h4 className="text-center text-3xl mb-4 ml-6">
-                  Aluguer efetuado com sucesso.
+                  Aula marcada com sucesso.
                 </h4>
                 <h4 className="flex font-bold text-3xl text-[#5BB6AE]"style={{  display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto' }}>
                   Aula marcada!
