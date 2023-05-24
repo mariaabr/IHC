@@ -132,9 +132,19 @@ const HorarioGrupo = () => {
     const [showText3, setShowText3] = useState(false);
     const [infoaula, setInfoAula] = useState(false);
     const [cor, setCor] = useState(false);
+    const [showQuant, setShowQuant] = useState(false);
+    const [showErro, setShowErro] = useState(false);
 
-    
+    const handleErro = () => {
+        setShowErro(true);
+    }
+
+    const handleClick = () => {
+        setShowQuant(true);
+    }
+
     const handleButtonClick = () => {
+        setShowQuant(false);
         setShowText(true);
     }
 
@@ -165,6 +175,7 @@ const HorarioGrupo = () => {
         event.preventDefault();
         if (!infoaula) {
             setInfoAula(true);
+
         } else {
             setInfoAula(false);
         }
@@ -205,7 +216,7 @@ const HorarioGrupo = () => {
                                     Voltar
                                 </button>
                                 </Link> */}
-                                <p style={{ textAlign: 'center', marginTop: '0px', fontSize: '50px' }}><b>Horário das aulas de Surf</b></p>
+                                <p style={{ textAlign: 'center', marginTop: '0px', fontSize: '50px' }}><b>Horário das aulas de Surf (Grupo)</b></p>
                                 <button style={filtro}>
                                     Filtrar por:
                                 </button>
@@ -225,53 +236,53 @@ const HorarioGrupo = () => {
                                 <div style={flexChildStyleDias}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '20px' }}><b>Domingo</b></p></div>
                             </div>
                             <div style={flexContainerStyle4}>
-                                {/* colocar a cena do if e muda a informação que está ao lado tipo mais 1 do gabriel*/}
-                                {!cor ? (<div style={flexChildStyleAulaEscolhida} className="bg-[#5BB6AE] hover:bg-[#037971] " onClick={handleButtonCor}><button onClick={handleInfoAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px', marginLeft: '14px' }}>09:00-11:00</p></button></div>)
-                                :
-                                <div style={flexChildStyleAulaEscolhida} className="bg-[#037971] "><button><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px', marginLeft: '14px' }}>09:00-11:00</p></button></div>}
-                                
-                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>09:00-11:00</p></div>
-                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>09:00-11:00</p></div>
-                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>09:00-11:00</p></div>
+                                <div style={flexChildStyle1}   ></div>
+                                <div style={flexChildStyle1}   ></div>
+                                <div style={flexChildStyle1}   ></div>
                                 <div style={flexChildStyle1}   ></div>
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>09:00-11:00</p></div>
-                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>09:00-11:00</p></div>
+                                <div style={flexChildStyle1}   ></div>
+                                {/* colocar a cena do if e muda a informação que está ao lado tipo mais 1 do gabriel*/}
+                                {!cor ? (<div style={flexChildStyleAulaEscolhida} className="bg-[#5BB6AE] hover:bg-[#037971] " onClick={handleButtonCor}><button onClick={handleInfoAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px', marginLeft: '14px' }}>09:00-11:00</p></button></div>)
+                                    :
+                                    <div style={flexChildStyleAulaEscolhida} className="bg-[#037971] "><button><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px', marginLeft: '14px' }}>09:00-11:00</p></button></div>}
                             </div>
                             <div style={flexContainerStyle4}>
+                                <div style={flexChildStyle1} />
+                                <div style={flexChildStyle1} />
+                                <div style={flexChildStyle1} />
+                                <div style={flexChildStyle1} />
+                                <div style={flexChildStyle1}   ></div>
+                                <div style={flexChildStyle1}   ></div>
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>11:00-13:00</p></div>
-                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>11:00-13:00</p></div>
-                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>11:00-13:00</p></div>
-                                <div style={flexChildStyle1} />
-                                <div style={flexChildStyle1} />
-                                <div style={flexChildStyle1} />
-                                <div style={flexChildStyle1} />
                             </div>
                             <div style={flexContainerStyle4}>
+                                <div style={flexChildStyle1} />
                                 <div style={flexChildStyle1} />
                                 <div style={flexChildStyle1} />
                                 <div style={flexChildStyle1} />
                                 <div style={flexChildStyle1} />
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>14:00-16:00</p></div>
-                                <div style={flexChildStyle1} />
-                                <div style={flexChildStyle1} />
-                            </div>
-                            <div style={flexContainerStyle4}>
-                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>16:00-18:00</p></div>
-                                <div style={flexChildStyle1} />
-                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>16:00-18:00</p></div>
-                                <div style={flexChildStyle1} />
-                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>16:00-18:00</p></div>
-                                <div style={flexChildStyle1} />
-                                <div style={flexChildStyle1} />
+                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>14:00-16:00</p></div>
                             </div>
                             <div style={flexContainerStyle4}>
                                 <div style={flexChildStyle1} />
+                                <div style={flexChildStyle1} />
+                                <div style={flexChildStyle1} />
+                                <div style={flexChildStyle1} />
+                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>16:00-18:00</p></div>
+                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>16:00-18:00</p></div>
+                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>16:00-18:00</p></div>
+                            </div>
+                            <div style={flexContainerStyle4}>
+
+                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>18:00-20:00</p></div>
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>18:00-20:00</p></div>
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>18:00-20:00</p></div>
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>18:00-20:00</p></div>
                                 <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>18:00-20:00</p></div>
                                 <div style={flexChildStyle1} />
-                                <div style={flexChildStyle1} />
+                                <div style={flexChildStyleAula}><p style={{ textAlign: 'center', marginTop: '30px', fontSize: '18px' }}>18:00-20:00</p></div>
                             </div>
 
                             {infoaula ? (<div
@@ -297,14 +308,14 @@ const HorarioGrupo = () => {
                                     <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Professor: <a style={{ fontSize: '28px' }}> Abel Costa </a> </h4>
                                 </div>
                                 <div>
-                                    <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Lotação: <a style={{ fontSize: '28px' }}> 6/7 </a> </h4>
+                                    <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Capacidade: <a style={{ fontSize: '28px' }}> 5 a 10 </a> </h4>
                                 </div>
                                 <div>
-                                    <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Preço: <a style={{ fontSize: '28px' }}> 20 euros </a> </h4>
+                                    <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Disponibilidade: <a style={{ fontSize: '28px' }}> Livre </a> </h4>
                                 </div>
 
                                 <div style={{ textAlign: 'center', marginTop: '70px', marginRight: '160px' }}>
-                                    <button style={filtro2} className="bg-[#D8D0C7] hover:bg-[#A3927F]" onClick={handleButtonClick}>
+                                    <button style={filtro2} className="bg-[#D8D0C7] hover:bg-[#A3927F]" onClick={handleClick}>
                                         <h3>Marcar aula</h3>
                                     </button>
                                 </div>
@@ -332,20 +343,164 @@ const HorarioGrupo = () => {
                                     <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Professor:</h4>
                                 </div>
                                 <div>
-                                    <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Lotação:  </h4>
+                                    <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Capacidade:  </h4>
                                 </div>
                                 <div>
-                                    <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Preço:  </h4>
+                                    <h4 style={{ fontSize: '33px', textAlign: 'left', marginTop: '15px' }}>Disponibilidade:  </h4>
                                 </div>
 
                                 <div style={{ textAlign: 'center', marginTop: '70px', marginRight: '160px' }}>
-                                    <button style={filtro2} className="bg-[#D8D0C7] hover:bg-[#A3927F]" onClick={handleButtonClick}>
+                                    <button style={filtro2} className="bg-[#D8D0C7] hover:bg-[#A3927F]" onClick={handleErro}>
                                         <h3>Marcar aula</h3>
                                     </button>
                                 </div>
 
                             </div>)}
                         </div>
+
+                        {/* Popup/modal window */}
+                        {showErro && (
+                            <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-16 flex flex-col items-start ">
+                                    <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
+                                        Não é possível realizar a operação!!
+                                    </h4>
+                                    <div className="flex items-center ml-5">
+                                        <div className="ml-4">
+                                            {/* <h5 className="text-xl mt-5 mb-2">
+                                                Horas: 09:00 - 11:00
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Professor: Abel Costa
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Capacidade: 5 a 10
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Disponibilidade: Livre 
+                                            </h5> */}
+
+                                            {/*Não apagar importante para o filtrar */}
+                                            {/* <select
+                                                className="border border-gray-400 p-2 mb-4"
+                                                //value={typeOfReading}
+                                                onChange={handleTypeOfReading}
+                                            >
+                                                <option value="Currently Reading">Currently Reading </option>
+                                                <option value="Finished Reading">Finished Reading</option>
+                                            </select> */}
+                                            {/* <div className='ml-10'>
+                                                <input
+                                                    style={{
+                                                        fontSize: "20px",
+                                                        border: "2px solid lightgray",
+                                                        borderRadius: "10px",
+                                                        marginLeft: "20 px",
+                                                        marginBottom: "20px",
+                                                        textAlign: "center",
+                                                    }}
+                                                    placeholder="0"
+                                                />
+                                            </div> */}
+
+                                            <form onSubmit={handleModalSubmit}>
+                                                {/* <h4 className="mt-6 text-xl font-semibold ">Current page:</h4>
+                                                <input
+                                                    type="number"
+                                                    name="pageNumber"
+                                                    className="border border-gray-400 p-2 mr-2" placeholder={pageNumber}
+                                                /> */}
+                                                <button
+                                                    class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
+                                                    onClick={() => { setShowErro(false) }}
+                                                >
+                                                    ×
+                                                </button>
+                                                {/* <button
+                                                    type="button"
+                                                    className="rounded-md bg-[#5BB6AE] px-14 py-3 ml-24 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={handleButtonClick}
+                                                >Enviar
+                                                </button> */}
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="absolute z-0 bg-black opacity-50 w-full h-full"></div>
+                            </div>
+                        )}
+
+                        {/* Popup/modal window */}
+                        {showQuant && (
+                            <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-16 flex flex-col items-start ">
+                                    <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
+                                        Quantos participantes terá a aula?
+                                    </h4>
+                                    <div className="flex items-center ml-5">
+                                        <div className="ml-4">
+                                            {/* <h5 className="text-xl mt-5 mb-2">
+                                                Horas: 09:00 - 11:00
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Professor: Abel Costa
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Capacidade: 5 a 10
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Disponibilidade: Livre 
+                                            </h5> */}
+
+                                            {/*Não apagar importante para o filtrar */}
+                                            {/* <select
+                                                className="border border-gray-400 p-2 mb-4"
+                                                //value={typeOfReading}
+                                                onChange={handleTypeOfReading}
+                                            >
+                                                <option value="Currently Reading">Currently Reading </option>
+                                                <option value="Finished Reading">Finished Reading</option>
+                                            </select> */}
+                                            <div className='ml-10'>
+                                                <input
+                                                    style={{
+                                                        fontSize: "20px",
+                                                        border: "2px solid lightgray",
+                                                        borderRadius: "10px",
+                                                        marginLeft: "20 px",
+                                                        marginBottom: "20px",
+                                                        textAlign: "center",
+                                                    }}
+                                                    placeholder="0"
+                                                />
+                                            </div>
+
+                                            <form onSubmit={handleModalSubmit}>
+                                                {/* <h4 className="mt-6 text-xl font-semibold ">Current page:</h4>
+                                                <input
+                                                    type="number"
+                                                    name="pageNumber"
+                                                    className="border border-gray-400 p-2 mr-2" placeholder={pageNumber}
+                                                /> */}
+                                                <button
+                                                    class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
+                                                    onClick={() => { setShowQuant(false), setCor(false), setInfoAula(false) }}
+                                                >
+                                                    ×
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    className="rounded-md bg-[#5BB6AE] px-14 py-3 ml-24 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={handleButtonClick}
+                                                >Enviar
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="absolute z-0 bg-black opacity-50 w-full h-full"></div>
+                            </div>
+                        )}
 
 
 
@@ -365,13 +520,13 @@ const HorarioGrupo = () => {
                                                 Horas: 09:00 - 11:00
                                             </h5>
                                             <h5 className="text-xl mt-5 mb-2">
-                                                Professor: Abel Teixeira
+                                                Professor: Abel Costa
                                             </h5>
                                             <h5 className="text-xl mt-5 mb-2">
-                                                Lotação: 6/7
+                                                Nº alunos: 5
                                             </h5>
                                             <h5 className="text-xl mt-5 mb-2">
-                                                Preço: 20 euros
+                                                Preço por pessoa: 21 euros
                                             </h5>
 
                                             {/*Não apagar importante para o filtrar */}
@@ -393,7 +548,7 @@ const HorarioGrupo = () => {
                                                 /> */}
                                                 <button
                                                     class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
-                                                    onClick={() => {setShowText(false), setCor(false), setInfoAula(false)}}
+                                                    onClick={() => { setShowText(false), setCor(false), setInfoAula(false) }}
                                                 >
                                                     ×
                                                 </button>
@@ -401,7 +556,7 @@ const HorarioGrupo = () => {
 
                                                 <button
                                                     type="button"
-                                                    className="rounded-md bg-[#95A6A4] px-14 py-3 mt-6 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={()=> {setShowText(false), setCor(false), setInfoAula(false)}}
+                                                    className="rounded-md bg-[#95A6A4] px-14 py-3 mt-6 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={() => { setShowText(false), setCor(false), setInfoAula(false) }}
                                                 >Não
                                                 </button>
                                                 <button
@@ -422,16 +577,16 @@ const HorarioGrupo = () => {
                         {showText2 && (
                             <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
                                 <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-14 pl-10 pr-20 pb-14 flex flex-col items-start ">
-                                <h4 className="text-center text-3xl font-bold mb-6 ml-6" >
+                                    <h4 className="text-center text-3xl font-bold mb-6 ml-6" >
                                         Pretende alugar material?
                                     </h4>
                                     <div className="flex items-center ml-5">
                                         <div className="ml-4">
 
                                             <form onSubmit={handleModalSubmit}>
-                                            <button
+                                                <button
                                                     class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
-                                                    onClick={() => setShowText2(false)}
+                                                    onClick={() => { setShowText2(false), setCor(false), setInfoAula(false) }}
                                                 >
                                                     ×
                                                 </button>
@@ -459,13 +614,13 @@ const HorarioGrupo = () => {
                                                 </button>
                                                 {/**acrescentar página da matilde */}
                                                 <Link to="/tamanhosurf">
-                                                <button
-                                                    type="button"
-                                                    className="rounded-md bg-[#5BB6AE] px-14 py-3 ml-14 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={handleButtonClick3}
-                                                >Sim
-                                                </button>
+                                                    <button
+                                                        type="button"
+                                                        className="rounded-md bg-[#5BB6AE] px-14 py-3 ml-14 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={handleButtonClick3}
+                                                    >Sim
+                                                    </button>
                                                 </Link>
-                                                
+
                                             </form>
                                         </div>
                                     </div>
@@ -479,12 +634,12 @@ const HorarioGrupo = () => {
                         {showText3 && (
                             <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
                                 <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-20 flex flex-col items-start ">
-                                <h4 className="text-center text-3xl mb-4 ml-6">
-                  Aula marcada com sucesso.
-                </h4>
-                <h4 className="flex font-bold text-3xl text-[#5BB6AE]"style={{  display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto' }}>
-                  Aula marcada!
-                </h4>
+                                    <h4 className="text-center text-3xl mb-4 ml-6">
+                                        Aula marcada com sucesso.
+                                    </h4>
+                                    <h4 className="flex font-bold text-3xl text-[#5BB6AE]" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '0 auto' }}>
+                                        Aula marcada!
+                                    </h4>
                                     <div className="flex items-center ml-5">
                                         <div className="ml-4">
 
@@ -507,7 +662,7 @@ const HorarioGrupo = () => {
                                                 /> */}
                                                 <button
                                                     class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
-                                                    onClick={() => {setShowText3(false), setCor(false), setInfoAula(false)}}
+                                                    onClick={() => { setShowText3(false), setCor(false), setInfoAula(false) }}
                                                 >
                                                     ×
                                                 </button>

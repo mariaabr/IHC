@@ -82,7 +82,7 @@ function Navbarcode({ user }) {
                                         </Link>
                                     </Dropdown>
                                     <Dropdown label="Bodyboard" placement="right" class="font-medium text-gray-500 w-full hover:text-gray-500" >
-                                        <Link to="/test">
+                                        <Link to="/horarioGrupo">
                                             <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 pr-4 hover:bg-gray-100">
                                                 Individual
                                             </Dropdown.Item>

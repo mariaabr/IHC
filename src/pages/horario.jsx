@@ -132,6 +132,11 @@ const Horario = () => {
     const [showText3, setShowText3] = useState(false);
     const [infoaula, setInfoAula] = useState(false);
     const [cor, setCor] = useState(false);
+    const[showErro, setShowErro] = useState(false);
+
+    const handleErro = () => {
+        setShowErro(true);
+    }
 
     
     const handleButtonClick = () => {
@@ -165,6 +170,7 @@ const Horario = () => {
         event.preventDefault();
         if (!infoaula) {
             setInfoAula(true);
+
         } else {
             setInfoAula(false);
         }
@@ -339,14 +345,87 @@ const Horario = () => {
                                 </div>
 
                                 <div style={{ textAlign: 'center', marginTop: '70px', marginRight: '160px' }}>
-                                    <button style={filtro2} className="bg-[#D8D0C7] hover:bg-[#A3927F]" onClick={handleButtonClick}>
+                                    
+                                    <button style={filtro2} className="bg-[#D8D0C7] hover:bg-[#A3927F]" onClick={handleErro}>
                                         <h3>Marcar aula</h3>
                                     </button>
+                                
                                 </div>
 
                             </div>)}
                         </div>
 
+                        {/* Popup/modal window */}
+                        {showErro && (
+                            <div className=" fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+                                <div className="max-w-xl text-left absolute z-10 bg-gray-100 rounded-xl pt-20 pl-14 pr-24 pb-16 flex flex-col items-start ">
+                                    <h4 className="text-center text-3xl font-bold mb-4 ml-6" >
+                                        Não é possível realizar a operação!!
+                                    </h4>
+                                    <div className="flex items-center ml-5">
+                                        <div className="ml-4">
+                                            {/* <h5 className="text-xl mt-5 mb-2">
+                                                Horas: 09:00 - 11:00
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Professor: Abel Costa
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Capacidade: 5 a 10
+                                            </h5>
+                                            <h5 className="text-xl mt-5 mb-2">
+                                                Disponibilidade: Livre 
+                                            </h5> */}
+
+                                            {/*Não apagar importante para o filtrar */}
+                                            {/* <select
+                                                className="border border-gray-400 p-2 mb-4"
+                                                //value={typeOfReading}
+                                                onChange={handleTypeOfReading}
+                                            >
+                                                <option value="Currently Reading">Currently Reading </option>
+                                                <option value="Finished Reading">Finished Reading</option>
+                                            </select> */}
+                                            {/* <div className='ml-10'>
+                                                <input
+                                                    style={{
+                                                        fontSize: "20px",
+                                                        border: "2px solid lightgray",
+                                                        borderRadius: "10px",
+                                                        marginLeft: "20 px",
+                                                        marginBottom: "20px",
+                                                        textAlign: "center",
+                                                    }}
+                                                    placeholder="0"
+                                                />
+                                            </div> */}
+
+                                            <form onSubmit={handleModalSubmit}>
+                                                {/* <h4 className="mt-6 text-xl font-semibold ">Current page:</h4>
+                                                <input
+                                                    type="number"
+                                                    name="pageNumber"
+                                                    className="border border-gray-400 p-2 mr-2" placeholder={pageNumber}
+                                                /> */}
+                                                <button
+                                                    class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
+                                                    onClick={() => { setShowErro(false)}}
+                                                >
+                                                    ×
+                                                </button>
+                                                {/* <button
+                                                    type="button"
+                                                    className="rounded-md bg-[#5BB6AE] px-14 py-3 ml-24 text-xl font-semibold text-white shadow-sm hover:bg-[#037971] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#037971]" onClick={handleButtonClick}
+                                                >Enviar
+                                                </button> */}
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="absolute z-0 bg-black opacity-50 w-full h-full"></div>
+                            </div>
+                        )}
 
 
                         {/* Popup/modal window */}
@@ -431,7 +510,7 @@ const Horario = () => {
                                             <form onSubmit={handleModalSubmit}>
                                             <button
                                                     class="absolute top-3 right-7  rounded mt-4  py-0 px-1 border-0 text-3xl leading-none font-semibold outline-none focus:outline-none active:"
-                                                    onClick={() => setShowText2(false)}
+                                                    onClick={() => {setShowText2(false), setCor(false), setInfoAula(false)}}
                                                 >
                                                     ×
                                                 </button>
