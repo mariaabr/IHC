@@ -16,6 +16,7 @@ import OficialInscricao from './pages/oficialinscricao'
 import Material from './pages/Material'
 import TamanhoCal from './pages/TamanhosComCalendario'
 import TamanhoSurf from './pages/TamanhoSurf'
+import HorarioGrupo from './pages/horarioGrupo';
 
 function App() {
   let user = null;
@@ -32,6 +33,7 @@ function App() {
       <Routes>
         <Route path='/home' element={<Home />} />
         <Route path='/horario' element={<Horario />} />
+        <Route path='/horarioGrupo' element={<HorarioGrupo/> }/>
         <Route path='/test' element={<Test />} />
         <Route path='/material' element={<Material />} />
         <Route path='/personalarea' element={<PersonalArea />} />

@@ -75,7 +75,7 @@ function Navbarcode({ user }) {
                                                 Individual
                                             </Dropdown.Item>
                                         </Link>
-                                        <Link to="/test">
+                                        <Link to="/horarioGrupo">
                                             <Dropdown.Item class="text-gray-500 font-medium pl-4 pb-2 pt-2 pr-4 hover:bg-gray-100">
                                                 Grupo
                                             </Dropdown.Item>
