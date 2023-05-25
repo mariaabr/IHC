@@ -2,6 +2,7 @@ import { useState } from "react";
 // import Popup from "./Popup.jsx";
 import Bodyboard from "./Bodyboard.jpg";
 import MyButton from "./Button";
+import { Link } from "react-router-dom";
 // import "./App.css";
 
 const Tamanho = () => {
@@ -23,6 +24,7 @@ const Tamanho = () => {
   };
 
   const OpenFinalModal = () => {
+    setShowText2(false);
     setShowText3(true);
   };
 
@@ -310,6 +312,7 @@ const Tamanho = () => {
                   <div
                     style={{ display: "flex", justifyContent: "space-between" }}
                   >
+                    <Link to="/horario">
                     <button
                       className=" absolute top-3 right-7 text-gray-500 rounded mt-4  py-1 px-2 border-0 text-5xl leading-none font-semibold outline-none focus:outline-none"
                       onClick={() => {
@@ -318,7 +321,7 @@ const Tamanho = () => {
                       }}
                     >
                       ×
-                    </button>
+                    </button></Link>
                   </div>
                 </div>
               </div>
