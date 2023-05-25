@@ -444,7 +444,7 @@ const Horario = () => {
                                                 Horas: 09:00 - 11:00
                                             </h5>
                                             <h5 className="text-xl mt-5 mb-2">
-                                                Professor: Abel Teixeira
+                                                Professor: Abel Costa
                                             </h5>
                                             <h5 className="text-xl mt-5 mb-2">
                                                 Lotação: 6/7
